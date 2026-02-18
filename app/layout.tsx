@@ -16,9 +16,6 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Ergophobia | Fear of Work",
   description: "The official website for $ERGOPHOBIA memecoin. Embrace the fear of work.",
-  icons: {
-    icon: "/logo.jpg",
-  },
 };
 
 export default function RootLayout({
