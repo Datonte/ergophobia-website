@@ -47,7 +47,7 @@ export default function Home() {
             <h2 className="text-2xl sm:text-3xl font-bold text-center uppercase tracking-wider text-neutral-300 mb-4">
               Join the <span className="text-red-600">Movement</span>
             </h2>
-            <ContractAddress address="0xErgophobiaContractAddressPlaceholder" />
+            <ContractAddress address="26tSKNDjYYT1QtiCDC7ftu2AkwgRoKYUMuferxStpump" />
           </ScaleOnScroll>
 
           <ScaleOnScroll>

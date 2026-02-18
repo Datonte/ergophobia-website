@@ -8,7 +8,7 @@ export function TokenLinks() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             {/* Twitter / X Button */}
             <a
-                href="https://twitter.com"
+                href="https://x.com/i/communities/2024242867561255416"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative inline-flex h-14 items-center justify-center overflow-hidden rounded-lg bg-black border-2 border-red-800 px-8 font-bold text-white uppercase tracking-wider duration-300 hover:border-red-500 hover:shadow-[0_0_20px_rgba(220,38,38,0.3)] hover:scale-105 transition-all"
@@ -22,7 +22,7 @@ export function TokenLinks() {
 
             {/* Dexscreener Button */}
             <a
-                href="https://dexscreener.com"
+                href="https://dexscreener.com/solana/4ixCT5sUcdQLPM4d4FaYBucrngs72TdSRMRHRbWsURcM"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative inline-flex h-14 items-center justify-center overflow-hidden rounded-lg bg-black border-2 border-red-800 px-8 font-bold text-white uppercase tracking-wider duration-300 hover:border-red-500 hover:shadow-[0_0_20px_rgba(220,38,38,0.3)] hover:scale-105 transition-all"
