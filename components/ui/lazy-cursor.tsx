@@ -177,9 +177,6 @@ export default function LazyCursor() {
 
     return (
         <>
-            <style jsx global>{`
-                * { cursor: none !important; }
-            `}</style>
             <canvas
                 ref={canvasRef}
                 className="fixed inset-0 pointer-events-none z-[9999]"
