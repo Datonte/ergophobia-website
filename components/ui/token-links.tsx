@@ -12,7 +12,7 @@ export function TokenLinks() {
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md bg-neutral-950 px-6 font-medium text-neutral-200 duration-300 hover:w-40 hover:bg-neutral-900"
+                className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md bg-black border border-neutral-800 px-6 font-medium text-red-500 duration-300 hover:w-40 hover:bg-neutral-900 hover:border-red-600"
             >
                 <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-1000 group-hover:[transform:skew(-12deg)_translateX(100%)]">
                     <div className="relative h-full w-8 bg-white/20" />
@@ -25,7 +25,7 @@ export function TokenLinks() {
                 href="https://dexscreener.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md bg-neutral-950 px-6 font-medium text-neutral-200 duration-300 hover:bg-neutral-900"
+                className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md bg-black border border-neutral-800 px-6 font-medium text-red-500 duration-300 hover:bg-neutral-900 hover:border-red-600"
             >
                 <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-1000 group-hover:[transform:skew(-12deg)_translateX(100%)]">
                     <div className="relative h-full w-8 bg-white/20" />
@@ -47,8 +47,8 @@ export function ContractAddress({ address = "0x000000000000000000000000000000000
     };
 
     return (
-        <div className="relative mt-6 max-w-md w-full mx-auto p-0.5 rounded-xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
-            <div className="flex items-center justify-between gap-4 rounded-[10px] bg-neutral-900 px-4 py-3 text-white">
+        <div className="relative mt-6 max-w-md w-full mx-auto p-0.5 rounded-xl bg-gradient-to-r from-red-800 via-neutral-600 to-red-800">
+            <div className="flex items-center justify-between gap-4 rounded-[10px] bg-black px-4 py-3 text-white">
                 <code className="tex-sm sm:text-base font-mono truncate text-neutral-400">
                     {address}
                 </code>

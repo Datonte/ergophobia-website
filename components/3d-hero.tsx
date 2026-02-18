@@ -90,8 +90,8 @@ export default function HeroGeometric({
     };
 
     return (
-        <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#0a0a0a]">
-            <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.05] via-transparent to-rose-500/[0.05] blur-3xl" />
+        <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-black">
+            <div className="absolute inset-0 bg-gradient-to-br from-red-900/[0.05] via-transparent to-neutral-900/[0.05] blur-3xl" />
 
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <ElegantShape
@@ -99,7 +99,7 @@ export default function HeroGeometric({
                     width={600}
                     height={140}
                     rotate={12}
-                    gradient="from-indigo-500/[0.15]"
+                    gradient="from-red-600/[0.15]"
                     className="left-[-10%] md:left-[-5%] top-[15%] md:top-[20%]"
                 />
 
@@ -108,7 +108,7 @@ export default function HeroGeometric({
                     width={500}
                     height={120}
                     rotate={-15}
-                    gradient="from-rose-500/[0.15]"
+                    gradient="from-neutral-800/[0.15]"
                     className="right-[-5%] md:right-[0%] top-[70%] md:top-[75%]"
                 />
 
@@ -117,7 +117,7 @@ export default function HeroGeometric({
                     width={300}
                     height={80}
                     rotate={-8}
-                    gradient="from-violet-500/[0.15]"
+                    gradient="from-red-800/[0.15]"
                     className="left-[5%] md:left-[10%] bottom-[5%] md:bottom-[10%]"
                 />
 
@@ -126,7 +126,7 @@ export default function HeroGeometric({
                     width={200}
                     height={60}
                     rotate={20}
-                    gradient="from-amber-500/[0.15]"
+                    gradient="from-neutral-600/[0.15]"
                     className="right-[15%] md:right-[20%] top-[10%] md:top-[15%]"
                 />
 
@@ -135,7 +135,7 @@ export default function HeroGeometric({
                     width={150}
                     height={40}
                     rotate={-25}
-                    gradient="from-cyan-500/[0.15]"
+                    gradient="from-red-500/[0.15]"
                     className="left-[20%] md:left-[25%] top-[5%] md:top-[10%]"
                 />
             </div>
@@ -155,7 +155,7 @@ export default function HeroGeometric({
                             <br />
                             <span
                                 className={cn(
-                                    "bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300 "
+                                    "bg-clip-text text-transparent bg-gradient-to-r from-red-500 via-white/90 to-neutral-500 "
                                 )}
                             >
                                 {title2}
@@ -176,7 +176,7 @@ export default function HeroGeometric({
                 </div>
             </div>
 
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-[#0a0a0a]/80 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/80 pointer-events-none" />
         </div>
     );
 }
