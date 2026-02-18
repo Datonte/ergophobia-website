@@ -1,182 +1,97 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+import Image from "next/image";
 
-function ElegantShape({
-    className,
-    delay = 0,
-    width = 400,
-    height = 100,
-    rotate = 0,
-    gradient = "from-white/[0.08]",
-}: {
-    className?: string;
-    delay?: number;
-    width?: number;
-    height?: number;
-    rotate?: number;
-    gradient?: string;
-}) {
+export default function HeroSection() {
     return (
-        <motion.div
-            initial={{
-                opacity: 0,
-                y: -150,
-                rotate: rotate - 15,
-            }}
-            animate={{
-                opacity: 1,
-                y: 0,
-                rotate: rotate,
-            }}
-            transition={{
-                duration: 2.4,
-                delay,
-                ease: [0.23, 0.86, 0.39, 0.96] as [number, number, number, number],
-                opacity: { duration: 1.2 },
-            }}
-            className={cn("absolute", className)}
-        >
+        <section className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-black">
+            {/* Single spinning hypnotic disc */}
             <motion.div
-                animate={{
-                    y: [0, 15, 0],
-                }}
-                transition={{
-                    duration: 12,
-                    repeat: Number.POSITIVE_INFINITY,
-                    ease: "easeInOut",
-                }}
+                animate={{ rotate: 360 }}
+                transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full"
                 style={{
-                    width,
-                    height,
+                    width: "200vmax",
+                    height: "200vmax",
+                    background: `conic-gradient(
+                        #dc2626 0deg, #dc2626 20deg,
+                        #000 20deg, #000 40deg,
+                        #dc2626 40deg, #dc2626 60deg,
+                        #000 60deg, #000 80deg,
+                        #dc2626 80deg, #dc2626 100deg,
+                        #000 100deg, #000 120deg,
+                        #dc2626 120deg, #dc2626 140deg,
+                        #000 140deg, #000 160deg,
+                        #dc2626 160deg, #dc2626 180deg,
+                        #000 180deg, #000 200deg,
+                        #dc2626 200deg, #dc2626 220deg,
+                        #000 220deg, #000 240deg,
+                        #dc2626 240deg, #dc2626 260deg,
+                        #000 260deg, #000 280deg,
+                        #dc2626 280deg, #dc2626 300deg,
+                        #000 300deg, #000 320deg,
+                        #dc2626 320deg, #dc2626 340deg,
+                        #000 340deg, #000 360deg
+                    )`,
                 }}
-                className="relative"
-            >
-                <div
-                    className={cn(
-                        "absolute inset-0 rounded-full",
-                        "bg-gradient-to-r to-transparent",
-                        gradient,
-                        "backdrop-blur-[2px] border-2 border-white/[0.15]",
-                        "shadow-[0_8px_32px_0_rgba(255,255,255,0.1)]",
-                        "after:absolute after:inset-0 after:rounded-full",
-                        "after:bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.2),transparent_70%)]"
-                    )}
-                />
-            </motion.div>
-        </motion.div>
-    );
-}
+            />
 
-export default function HeroGeometric({
-    title1 = "Fear of",
-    title2 = "Work",
-}: {
-    title1?: string;
-    title2?: string;
-}) {
-    const fadeUpVariants = {
-        hidden: { opacity: 0, y: 30 },
-        visible: (i: number) => ({
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 1,
-                delay: 0.5 + i * 0.2,
-                ease: [0.25, 0.4, 0.25, 1] as [number, number, number, number],
-            },
-        }),
-    };
+            {/* Vignette — stronger to make center text readable */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.6)_0%,rgba(0,0,0,0.85)_60%,rgba(0,0,0,0.95)_100%)] pointer-events-none z-[1]" />
 
-    return (
-        <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-black">
-            <div className="absolute inset-0 bg-gradient-to-br from-red-900/[0.05] via-transparent to-neutral-900/[0.05] blur-3xl" />
+            {/* Center content — all on a dark backdrop for readability */}
+            <div className="relative z-10 flex flex-col items-center justify-center text-center px-4">
+                {/* Logo */}
+                <motion.div
+                    initial={{ scale: 0.3, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
+                    className="mb-8"
+                >
+                    <div
+                        className="relative w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-red-600/60 shadow-[0_0_80px_rgba(220,38,38,0.5)]"
+                        style={{ animation: "float 6s ease-in-out infinite" }}
+                    >
+                        <Image src="/logo.jpg" alt="Ergophobia Logo" fill className="object-cover" priority />
+                    </div>
+                </motion.div>
 
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <ElegantShape
-                    delay={0.3}
-                    width={600}
-                    height={140}
-                    rotate={12}
-                    gradient="from-red-600/[0.15]"
-                    className="left-[-10%] md:left-[-5%] top-[15%] md:top-[20%]"
-                />
+                {/* Title — ERGOPHOBIA */}
+                <motion.h1
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5, duration: 1, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
+                    className="text-5xl sm:text-7xl md:text-9xl font-black tracking-tighter uppercase leading-none"
+                >
+                    <span className="text-red-600 drop-shadow-[0_0_40px_rgba(220,38,38,0.6)] [text-shadow:_0_0_40px_rgba(220,38,38,0.4),_0_4px_20px_rgba(0,0,0,1)]">
+                        ERGOPHOBIA
+                    </span>
+                </motion.h1>
 
-                <ElegantShape
-                    delay={0.5}
-                    width={500}
-                    height={120}
-                    rotate={-15}
-                    gradient="from-neutral-800/[0.15]"
-                    className="right-[-5%] md:right-[0%] top-[70%] md:top-[75%]"
-                />
+                {/* Subtitle */}
+                <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.7, duration: 1 }}
+                    className="mt-3 text-lg sm:text-2xl md:text-3xl font-bold tracking-widest uppercase text-white [text-shadow:_0_0_20px_rgba(0,0,0,1),_0_2px_10px_rgba(0,0,0,1)]"
+                >
+                    Fear of Work
+                </motion.p>
 
-                <ElegantShape
-                    delay={0.4}
-                    width={300}
-                    height={80}
-                    rotate={-8}
-                    gradient="from-red-800/[0.15]"
-                    className="left-[5%] md:left-[10%] bottom-[5%] md:bottom-[10%]"
-                />
-
-                <ElegantShape
-                    delay={0.6}
-                    width={200}
-                    height={60}
-                    rotate={20}
-                    gradient="from-neutral-600/[0.15]"
-                    className="right-[15%] md:right-[20%] top-[10%] md:top-[15%]"
-                />
-
-                <ElegantShape
-                    delay={0.7}
-                    width={150}
-                    height={40}
-                    rotate={-25}
-                    gradient="from-red-500/[0.15]"
-                    className="left-[20%] md:left-[25%] top-[5%] md:top-[10%]"
-                />
+                {/* Tagline */}
+                <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1, duration: 1 }}
+                    className="mt-4 text-xs sm:text-sm md:text-base text-neutral-400 font-light tracking-[0.3em] uppercase font-mono [text-shadow:_0_0_15px_rgba(0,0,0,1),_0_2px_8px_rgba(0,0,0,1)]"
+                >
+                    System Error: Productivity Not Found
+                </motion.p>
             </div>
 
-            <div className="relative z-10 container mx-auto px-4 md:px-6">
-                <div className="max-w-3xl mx-auto text-center">
-                    <motion.div
-                        custom={1}
-                        variants={fadeUpVariants}
-                        initial="hidden"
-                        animate="visible"
-                    >
-                        <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 md:mb-8 tracking-tight cursor-default">
-                            <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
-                                {title1}
-                            </span>
-                            <br />
-                            <span
-                                className={cn(
-                                    "bg-clip-text text-transparent bg-gradient-to-r from-red-500 via-white/90 to-neutral-500 "
-                                )}
-                            >
-                                {title2}
-                            </span>
-                        </h1>
-                    </motion.div>
-
-                    <motion.div
-                        custom={2}
-                        variants={fadeUpVariants}
-                        initial="hidden"
-                        animate="visible"
-                    >
-                        <p className="text-base sm:text-lg md:text-xl text-white/40 mb-8 leading-relaxed font-light tracking-wide max-w-xl mx-auto px-4">
-                            Why work when you can procrastinate? The first token powered by pure laziness.
-                        </p>
-                    </motion.div>
-                </div>
-            </div>
-
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/80 pointer-events-none" />
-        </div>
+            {/* Bottom gradient */}
+            <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black to-transparent pointer-events-none z-[3]" />
+        </section>
     );
 }
